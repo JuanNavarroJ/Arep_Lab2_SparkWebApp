@@ -1,7 +1,7 @@
-# Introducción a sistemas complejos, Java, Maven y GitHub
+# Introducción a sistemas complejos, Heroku, Java, Maven y GitHub
 
 
-Este proyecto permite calcular la media y desviación estándar de un grupo de datos dados, para realizar el ejercicio se utilizo una propia lista enlazada la cual permite almacenar cada dato ingresado y poder procesarlo. 
+Este proyecto permite calcular la media y desviación estándar de un grupo de datos dados por medio de una pagina web, para realizar el ejercicio se utilizo una propia lista enlazada la cual permite almacenar cada dato ingresado y poder procesarlo. 
 
 
 
@@ -55,6 +55,7 @@ Debemos tener un editor java instalado y git, es opcional tener instalado el uso
 Construido con:
 
 -   [Maven](https://maven.apache.org/)  - Control de dependencias
+-	[Heroku] (https://dashboard.heroku.com/apps) - Plataforma Web
 
 
 
