@@ -49,12 +49,17 @@ Debemos tener un editor java instalado y git, es opcional tener instalado el uso
 
 ![image](https://github.com/JuanNavarroJ/Arep_Lab1_TallerMvnGit/blob/master/img/img9.PNG?raw=true)
 
+## Despliegue continuo
+
+[![CircleCI](https://circleci.com/gh/JuanNavarroJ/Arep_Lab2_SparkWebApp.svg?style=svg)](https://circleci.com/gh/JuanNavarroJ/Arep_Lab2_SparkWebApp)
+
 ## Desarrollo
 
 
 Construido con:
 
 -   [Maven](https://maven.apache.org/)  - Control de dependencias
+-	[CircleCI] (https://circleci.com/)  - Despliegue continuo
 -	[Heroku] (https://dashboard.heroku.com/apps) - Plataforma Web
 
 

@@ -5,11 +5,23 @@
  */
 package edu.escuelaing.arep;
 
+import edu.escuealing.arep.calculadora.Calculadora;
+import edu.escuelaing.arep.linkedList.LinkedList;
+import edu.escuelaing.arep.linkedList.Nodo;
 import spark.Request;
 import spark.Response;
 import static spark.Spark.*;
 
+/**
+ *
+ * @author Juan David
+ */
 public class SparkWebApp {
+
+    // Atributos
+    private static Calculadora calculadora;
+    private static LinkedList linkedList;
+    private Nodo nodo;
 
     /**
      * This main method uses SparkWeb static methods and lambda functions to
@@ -17,6 +29,8 @@ public class SparkWebApp {
      * /hello relative URL.
      */
     public static void main(String[] args) {
+        calculadora = new Calculadora();
+        linkedList = new LinkedList();
         port(getPort());
         get("/inputdata", (req, res) -> inputDataPage(req, res));
         get("/results", (req, res) -> resultsPage(req, res));
@@ -27,25 +41,41 @@ public class SparkWebApp {
                 = "<!DOCTYPE html>"
                 + "<html>"
                 + "<body>"
-                + "<h2>HTML Forms</h2>"
+                + "<h2>Calculadora media y desviacion estandar</h2>"
                 + "<form action=\"/results\">"
-                + "  First name:<br>"
-                + "  <input type=\"text\" name=\"firstname\" value=\"Mickey\">"
+                + "  Digite los numeros separados por comas.<br>"
+                + "  <input type=\"text\" name='numeros'>"
                 + "  <br>"
-                + "  Last name:<br>"
-                + "  <input type=\"text\" name=\"lastname\" value=\"Mouse\">"
-                + "  <br><br>"
-                + "  <input type=\"submit\" value=\"Submit\">"
+                + "  <input type=\"submit\" value=\"Calular Media y Desviacion Estandar\">"
                 + "</form>"
-                + "<p>If you click the \"Submit\" button, the form-data will be sent to a page called \"/results\".</p>"
                 + "</body>"
                 + "</html>";
         return pageContent;
     }
 
     private static String resultsPage(Request req, Response res) {
-        return req.queryParams("firstname") + " " +
-                req.queryParams("lastname");
+        linkedList.clear();
+        double num;
+        String ans;
+        String[] values = req.queryParams("numeros").split(",");
+        for (String i : values) {
+            num = Double.parseDouble(i);
+            Nodo nodo = new Nodo(num, 0, null, null);
+            linkedList.add(nodo);
+        }
+
+        ans = "<!DOCTYPE html>"
+                + "<html>"
+                + "<body>"
+                + "<br:>" + "La Media de la lista de datos es: " + calculadora.calcularMedia(linkedList) + "<br:>"
+                + "<p>" + "La Desviacion Estandar de la lista de datos es: " + calculadora.calcularDesviacionEstandar(linkedList) + "<p>"
+                + "<form>"
+                + "<input type=\"button\" value=\"Go back!\" onclick=\"history.back()\">"
+                + "</form>"
+                + "</body>"
+                + "</html>";
+        
+        return ans;
     }
 
     /**
