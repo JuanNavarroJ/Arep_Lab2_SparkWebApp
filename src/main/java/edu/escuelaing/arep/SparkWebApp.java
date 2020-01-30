@@ -13,7 +13,7 @@ import spark.Response;
 import static spark.Spark.*;
 
 /**
- *
+ * Clase SparWebApp que crea una web desarrollada con SPARK.
  * @author Juan David
  */
 public class SparkWebApp {
@@ -36,10 +36,51 @@ public class SparkWebApp {
         get("/results", (req, res) -> resultsPage(req, res));
     }
 
+    /**
+     * Metodo que crea el html de la pagina web.
+     * @param req   Es el request de Spark
+     * @param res   Es el response de Spark
+     * @return Retorna Un html en forma de string.
+     */
     private static String inputDataPage(Request req, Response res) {
         String pageContent
                 = "<!DOCTYPE html>"
                 + "<html>"
+                + "<style>"
+                
+                + "input[type=text], select { "
+                    + "width: 100%;"
+                    + "padding: 12px 20px;"
+                    + "margin: 8px 0;"
+                    + "display: inline-block;"
+                    + "border: 1px solid #ccc;"
+                    + "border-radius: 4px;"
+                    + "box-sizing: border-box;"
+                + "}"
+                
+                + "input[type=submit] { "
+                + "    width: 100%;"
+                + "    background-color: #4CAF50;"
+                + "    color: white; "
+                + "    padding: 14px 20px;"
+                + "    margin: 8px 0;"
+                + "    border: none;"
+                + "    border-radius: 4px;"
+                + "    cursor: pointer;"
+                + "}"
+
+                + "input[type=submit]:hover {"
+                + "background-color: #45a049;"
+                + "}"
+
+                + "div {"
+                +    "border-radius: 5px;"
+                +    "background-color: #f2f2f2;"
+                +    "padding: 20px;"
+                +    "}"
+                
+                +"</style>"
+        
                 + "<body>"
                 + "<h2>Calculadora media y desviacion estandar</h2>"
                 + "<form action=\"/results\">"
@@ -53,6 +94,12 @@ public class SparkWebApp {
         return pageContent;
     }
 
+    /**
+     * Metodo que retorna un html con la respuesta.
+     * @param req   Es el request de Spark
+     * @param res   Es el response de Spark
+     * @return  Retorna un String con el html el cual contiene la respuesta de la media y demas datos.
+     */
     private static String resultsPage(Request req, Response res) {
         linkedList.clear();
         double num;
@@ -67,10 +114,10 @@ public class SparkWebApp {
         ans = "<!DOCTYPE html>"
                 + "<html>"
                 + "<body>"
-                + "<br:>" + "La Media de la lista de datos es: " + calculadora.calcularMedia(linkedList) + "<br:>"
-                + "<p>" + "La Desviacion Estandar de la lista de datos es: " + calculadora.calcularDesviacionEstandar(linkedList) + "<p>"
+                + "<h2>" + "La Media de la lista de datos es: " + calculadora.calcularMedia(linkedList) + "<h2>"
+                + "<h2>" + "La Desviacion Estandar de la lista de datos es: " + calculadora.calcularDesviacionEstandar(linkedList) + "<h2>"
                 + "<form>"
-                + "<input type=\"button\" value=\"Go back!\" onclick=\"history.back()\">"
+                + "<input type=\"button\" value=\"Volver a modificar los datos!\" onclick=\"history.back()\">"
                 + "</form>"
                 + "</body>"
                 + "</html>";
