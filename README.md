@@ -1,5 +1,11 @@
 # Introducción a sistemas complejos, Heroku, Java, Maven y GitHub
 
+## Link aplicación web
+
+[SparkWebApp](https://arep-lab2-sparkwebapp.herokuapp.com/inputdata)
+https://arep-lab2-sparkwebapp.herokuapp.com/inputdata
+
+---
 
 Este proyecto permite calcular la media y desviación estándar de un grupo de datos dados por medio de una pagina web, para realizar el ejercicio se utilizo una propia lista enlazada la cual permite almacenar cada dato ingresado y poder procesarlo. 
 
@@ -19,35 +25,35 @@ Debemos tener un editor java instalado y git, es opcional tener instalado el uso
 
 1. Entramos la terminal del dispositivo y accedemos a la carpeta en la cual queremos guardar el proyecto. 
 
-![Prueba1](https://github.com/JuanNavarroJ/Arep_Lab1_TallerMvnGit/blob/master/img/img1.PNG?raw=true))
+![1](https://user-images.githubusercontent.com/44879884/73498856-7ecbf680-438c-11ea-8e18-d75ce3b36dd8.PNG)
 
-2. Usando los comandos de git empezamos con : **$ git clone** https://github.com/JuanNavarroJ/Arep_Lab1_TallerMvnGit
+2. Usando los comandos de git empezamos con : **$ git clone** https://github.com/JuanNavarroJ/Arep_Lab2_SparkWebApp.git
 
-![parte2](https://github.com/JuanNavarroJ/Arep_Lab1_TallerMvnGit/blob/master/img/img2.PNG?raw=true)
+![2](https://user-images.githubusercontent.com/44879884/73498868-81c6e700-438c-11ea-9515-8fe96f2787d5.PNG)
 
 3. Ingresamos a la carpeta que descargamos desde Github.
 
-![parte3](https://github.com/JuanNavarroJ/Arep_Lab1_TallerMvnGit/blob/master/img/img3.PNG?raw=true)
+![3](https://user-images.githubusercontent.com/44879884/73498870-855a6e00-438c-11ea-9400-c1233021a9aa.PNG)
 
 4. Usando maven podemos en la linea de comandos compilar y ejecutar el proyecto con el codigo **$ mvn package**
 
-![parte4](https://github.com/JuanNavarroJ/Arep_Lab1_TallerMvnGit/blob/master/img/img4.PNG?raw=true)
+![4](https://user-images.githubusercontent.com/44879884/73498872-87bcc800-438c-11ea-9277-e8e48549c038.PNG)
 
-![parte4b](https://github.com/JuanNavarroJ/Arep_Lab1_TallerMvnGit/blob/master/img/img5.PNG?raw=true)
+![5](https://user-images.githubusercontent.com/44879884/73498873-88edf500-438c-11ea-9ce6-396135101579.PNG)
 
 5. Si solo deseas correr las pruebas podemos ejecutar el comando maven **$ mvn test**
 
-![testMaven](https://github.com/JuanNavarroJ/Arep_Lab1_TallerMvnGit/blob/master/img/img6.PNG?raw=true)
+![6](https://user-images.githubusercontent.com/44879884/73498878-8ab7b880-438c-11ea-9fa1-fe11b0d5cff8.PNG)
 
 6. Si deseas conocer a profundidad el funcionamiento del codigo, podemos abrir el proyecto en un editor java.
 
-![image](https://github.com/JuanNavarroJ/Arep_Lab1_TallerMvnGit/blob/master/img/img7.PNG?raw=true)
+![7](https://user-images.githubusercontent.com/44879884/73498880-8be8e580-438c-11ea-94f6-611431805298.PNG)
 
 7. Para generar el javadoc ejecutamos el comando **$ mvn javadoc:javadoc**
 
-![image](https://github.com/JuanNavarroJ/Arep_Lab1_TallerMvnGit/blob/master/img/img8.PNG?raw=true)
+![8](https://user-images.githubusercontent.com/44879884/73498883-8e4b3f80-438c-11ea-8402-f0d6d71d94d0.PNG)
 
-![image](https://github.com/JuanNavarroJ/Arep_Lab1_TallerMvnGit/blob/master/img/img9.PNG?raw=true)
+![9](https://user-images.githubusercontent.com/44879884/73498887-91dec680-438c-11ea-9594-8299c309d3c4.PNG)
 
 ## Despliegue continuo
 
